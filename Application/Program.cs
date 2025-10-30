@@ -406,5 +406,8 @@
 //    Console.WriteLine(i);
 //}
 
-
-
+Queue<char> B = new Queue<char>();
+B.Enqueue('A');
+B.Enqueue('B');
+B.Enqueue('C');
+Console.WriteLine(B.Peek());
