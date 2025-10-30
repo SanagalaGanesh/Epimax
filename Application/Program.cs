@@ -99,7 +99,7 @@
 //                cmd.Parameters.AddWithValue("@roll", roll);
 
 //                int affected = cmd.ExecuteNonQuery();
-//                Console.WriteLine(affected > 0 ? $"{affected} row(s) deleted.\n" : "⚠️ No student found with that Roll Number.\n");
+//                Console.WriteLine(affected > 0 ? $"{affected} row(s) deleted.\n" : "No student found with that Roll Number.\n");
 //            }
 //        }
 
