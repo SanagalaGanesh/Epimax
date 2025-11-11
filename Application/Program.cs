@@ -99,7 +99,7 @@
 //                cmd.Parameters.AddWithValue("@roll", roll);
 
 //                int affected = cmd.ExecuteNonQuery();
-//                Console.WriteLine(affected > 0 ? $"{affected} row(s) deleted.\n" : "⚠️ No student found with that Roll Number.\n");
+//                Console.WriteLine(affected > 0 ? $"{affected} row(s) deleted.\n" : "No student found with that Roll Number.\n");
 //            }
 //        }
 
@@ -406,8 +406,379 @@
 //    Console.WriteLine(i);
 //}
 
-Queue<char> B = new Queue<char>();
-B.Enqueue('A');
-B.Enqueue('B');
-B.Enqueue('C');
-Console.WriteLine(B.Peek());
+// Queue -- FirstInFirstOut FIFO -- Enqueue,Dequeue,Peek,clear
+
+//Queue<char> B = new Queue<char>();
+//B.Enqueue('A');
+//B.Enqueue('B');
+//B.Enqueue('C');
+////Console.WriteLine(B.Peek());
+//B.Dequeue();
+//Console.WriteLine(B.Peek());
+
+// Stack -- LastInFristOut LIFO -- Push,Pop,Peek,clear
+
+//Stack<int> A = new Stack<int>();
+//A.Push(0);
+//A.Push(1);
+//A.Push(2);
+//A.Push(3);
+//A.Push(4);
+////Console.WriteLine(A.Peek())
+////Console.WriteLine(A.Peek());
+//A.Pop();
+//A.Pop();
+//A.Clear();
+//Console.WriteLine(A.Peek());
+//foreach (int i in A)
+//{
+//    Console.WriteLine(i);
+//}
+
+//HashSet<int> A=new HashSet<int>() { 1,2,3,4,45,5 };
+//foreach (int i in A)
+//{
+//    Console.WriteLine(i);
+//}
+
+//LINQ -- Language Integrated Query
+
+//using System.Linq;
+
+// Where
+
+//List<int> A = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+////var e= A.Where(x => x % 2 == 0); 
+//foreach (int i in A)
+//{
+//    Console.Write(i + " ");
+//}
+
+//class Student {
+//    public int id;
+//    public required string name;
+//    public required string rollnumber;
+//    public int age;
+//}
+//class Program
+//{
+//    public static void Main()
+//    { 
+//        List<Student> students = new List<Student>()
+//        {
+//            new Student(){ id=1, name="Ganesh", rollnumber="S101", age=20 },
+//            new Student(){ id=2, name="Uzma", rollnumber="S102", age=19 },
+//            new Student(){ id=3, name="Vaishnavi", rollnumber="S103", age=21 },
+//            new Student(){ id=4, name="Aarav", rollnumber="S104", age=18 },
+//            new Student(){ id=5, name="Mira", rollnumber="S105", age=22 }
+//        }; 
+//        foreach (Student i in students)
+//        {
+//            Console.WriteLine($"{i.id},{i.name},{i.rollnumber},{i.age}");
+//        }
+
+//    }
+//}
+
+//OfTypeL<>()
+
+//List<object> A = new List<object>() { 1, "ganesh", 3, "Rakesh", 5, "Uday", 7,"Hanu", 9, 10 };
+
+//var e = A.OfType<int>();
+//var f = A.OfType<string>();
+
+//foreach (var i in f)
+
+//{
+//    Console.WriteLine(i + " ");
+//}
+
+//using System.Collections.Generic;
+
+//class Student
+//{
+//    public int id;
+//    public  string name;
+//    public string rollnumber;
+//    public int age;
+//    public List<string> Names = new List<string>();
+//}
+//class Program
+//{
+//    public static void Main()
+//    {
+//        var students = new List<Student>()
+//        {
+//            new Student() { id=1, Names=new List<string>{"Ganesh","kanmani" },rollnumber="S102", age=19 },
+//            new Student(){ id=2, Names=new List<string>{"Uzma","sahera"}, rollnumber="S102", age=19 },
+//            new Student(){ id=3, Names=new List<string>{"Vaishnavi","eshwar" }, rollnumber="S103", age=21 },
+//            new Student(){ id=4, Names=new List<string>{"Aarav","subbbu"},rollnumber="S104", age=18 },
+//            new Student(){ id=5, Names=new List<string>{"Mira" ,"ram"}, rollnumber="S105", age=22 }
+//        };
+
+
+//        var names = students.SelectMany(s => s.Names);
+//        foreach (var i in names)
+//        {
+//            Console.Write(i+"");            
+//        }
+
+//    }
+//}
+
+//List<int> A = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+//var e = A.Select(s=>s); 
+//foreach (int i in e)
+//{
+//    Console.Write(i + " ");
+//}
+
+
+//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+
+//class Student
+//{
+//    public int id;
+//    public string name;
+//    public string rollnumber;
+//    public int age;
+//    public List<string> Names = new List<string>();
+//}
+
+//class Program
+//{
+//    public static void Main()
+//    {
+//        var students = new List<Student>()
+//        {
+//            new Student() { id=1, Names=new List<string>{"Ganesh","Kanmani"}, rollnumber="S102", age=19 },
+//            new Student(){ id=2, Names=new List<string>{"Uzma","Sahera"}, rollnumber="S102", age=19 },
+//            new Student(){ id=3, Names=new List<string>{"Vaishnavi","Eshwar"}, rollnumber="S103", age=21 },
+//            new Student(){ id=4, Names=new List<string>{"Aarav","Subbu"}, rollnumber="S104", age=18 },
+//            new Student(){ id=5, Names=new List<string>{"Mira","Ram"}, rollnumber="S105", age=22 }
+//        };
+
+//        var names = students.SelectMany(s => s.Names);
+
+//        foreach (var i in names)
+//        {
+//            Console.WriteLine(i);
+//        }
+//    }
+//}
+
+
+//class Program
+//{
+//    public static  void Hello()
+//    {
+//        Console.WriteLine("Hello World");
+//    }
+
+//}
+
+//using System;
+
+//public class NotificationService
+//{
+//    // Step 1: Delegate declaration
+//    public delegate void Notify(string message);
+
+//    // Step 2: Different notification methods
+//    public static void SendEmail(string msg)
+//    {
+//        Console.WriteLine("Email sent: " + msg);
+//    }
+
+//    public static void SendSMS(string msg)
+//    {
+//        Console.WriteLine("SMS sent: " + msg);
+//    }
+
+//    public static void SendPush(string msg)
+//    {
+//        Console.WriteLine("Push Notification: " + msg);
+//    }
+
+//    public static void Main()
+//    {
+//        // Step 3: User chooses how to be notified
+//        Notify notifyUser;
+
+//        Console.WriteLine("Choose notification type: 1.Email 2.SMS 3.Push");
+//        int choice = int.Parse(Console.ReadLine());
+
+//        if (choice == 1)
+//            notifyUser = SendEmail;
+//        else if (choice == 2)
+//            notifyUser = SendSMS;
+//        else
+//            notifyUser = SendPush;
+
+//        // Step 4: Send notification
+//        notifyUser("Hello Chiru! Your order is ready.");
+//    }
+//}
+
+//using System;
+//using System.IO;
+//using System.Threading.Tasks;
+
+//public class Program
+//{
+//    public static async Task Main()
+//    {
+//        string filePath = "C:\\Users\\sanag\\OneDrive\\Desktop\\1.txt.txt";
+//        string content = await ReadFileAsync(filePath);
+//        Console.WriteLine(content);
+//    }
+
+//    public static async Task<string> ReadFileAsync(string filePath)
+//    {
+//        using (StreamReader reader = new StreamReader(filePath))
+//        {
+//            string content = await reader.ReadToEndAsync();
+//            return content;
+//        }
+//    }
+//}
+
+
+//using System;
+//using System.Net.Http;
+//using System.Threading.Tasks;
+
+//public class Program
+//{
+//    public static async Task Main()
+//    {
+//        string url = "https://api.github.com/users/SanagalaGanesh";
+
+//        using (HttpClient client = new HttpClient())
+//        {
+//            client.DefaultRequestHeaders.Add("User-Agent", "MyCSharpApp");
+//            HttpResponseMessage response = await client.GetAsync(url);
+//            string result = await response.Content.ReadAsStringAsync();
+//            Console.WriteLine(result);
+//        }
+//    }
+//}
+
+//using System.Threading;
+//class P
+//{
+//    static void task1()
+//    {
+//        for (int i = 0; i < 10; i++)
+//        {
+//            Console.WriteLine("Task 1");
+//        }
+//        Console.WriteLine("exiting t1");
+
+//    }
+//    static void task2()
+//    {
+//        for (int i = 0; i < 10; i++)
+//        {
+//            Console.WriteLine("Task 2");
+//            if (i == 5)
+//            {
+//                Console.WriteLine("Going to sleep");
+//                Thread.Sleep(5000);
+//                Console.WriteLine("Woke UP");
+//            }
+//        }
+//        Console.WriteLine("exiting t2");
+
+//    }
+
+//    static void task3()
+//    {
+//        for (int i = 0; i < 10; i++)
+//        {
+//            Console.WriteLine("Task 3");
+//        }
+//        Console.WriteLine("exiting t3");
+
+//    }
+//    public static void Main()
+//    {
+//        Thread t1 = new Thread(task1);
+//        Thread t2 = new Thread(task2);
+//        Thread t3 = new Thread(task3);
+
+//        t1.Start();
+//        t2.Start();
+//        t3.Start();
+//        t2.Join();
+//        Console.WriteLine("exiting Main Thread");
+
+//    }
+//}
+
+
+using System;
+using System.Threading;
+ 
+//class Program
+//{
+//    static void DoSomeWork()
+//    {
+//        for (int i = 1; i <= 5; i++)
+//        {
+//            Console.WriteLine($"Worker thread: printing {i}");
+//            Thread.Sleep(5000); 
+//        }
+//        Console.WriteLine("EXIT METHOD");
+//    }
+//    static void Main()
+//    {
+//        Thread t1 = new Thread(DoSomeWork);
+//        t1.Start();
+//        for (int i = 1; i <= 5; i++)
+//        {
+//            Console.WriteLine($"Main thread: printing {i}");
+//            Thread.Sleep(4000); 
+//        }
+//        t1.Join();
+
+//        Console.WriteLine("Main thread: All work done!");
+//    }
+
+    
+//}
+
+
+
+class P
+{
+    static void namaste()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            Console.WriteLine("Namaste");
+            Thread.Sleep(2000);
+        }
+    }
+
+    static void hello()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            Console.WriteLine("Hello");
+            Thread.Sleep(1000);
+        }
+    }
+    public static void Main()
+    {
+        Thread t1 = new Thread(namaste);
+        Thread t2 = new Thread(hello);
+        t1.Name="Namaste Thread";
+        t1.
+        t1.Start();
+        t2.Start();
+        Console.WriteLine("Main Thread Exiting");
+    }
+}
