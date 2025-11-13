@@ -719,9 +719,7 @@
 //}
 
 
-using System;
-using System.Threading;
- 
+
 //class Program
 //{
 //    static void DoSomeWork()
@@ -747,38 +745,181 @@ using System.Threading;
 //        Console.WriteLine("Main thread: All work done!");
 //    }
 
-    
+
 //}
 
 
 
+//class P
+//{
+//    static void namaste()
+//    {
+//        for (int i = 0; i < 5; i++)
+//        {
+//            Console.WriteLine("Namaste");
+//            Thread.Sleep(2000);
+//        }
+
+//            Console.WriteLine(Thread.CurrentThread.ManagedThreadId);
+//    }
+
+//    static void hello()
+//    {
+//        for (int i = 0; i < 5; i++)
+//        {
+//            Console.WriteLine("Hello");
+//            Thread.Sleep(1000);
+//        }
+//        Console.WriteLine(Thread.CurrentThread.ManagedThreadId);
+
+//    }
+//    public static void Main()
+//    {
+//       ThreadPool.QueueUserWorkItem(_=> namaste());
+//        ThreadPool.QueueUserWorkItem(_ => hello());
+//        Thread.Sleep(10000);
+//        Console.WriteLine("Main Thread Exiting");
+//    }
+//}
+
+// Delegates ie type safe function pointers used to pass methods as arguments to other methods. 
+
+
+
+using Microsoft.VisualBasic;
+using System;
+using System.Collections.Generic;
+using System.Reflection.Metadata.Ecma335;
+using System.Threading;
+
+//class P
+//{
+//    delegate int Calc(int x, int y);
+//    public static int Add(int a, int b)
+//    {
+//        return a + b;
+//    }
+//    public static int  Mul(int a, int b)
+//    {
+//        return a * b;
+//    }
+//    public static void Main()
+//    {
+//        Console.WriteLine("1.Addition\n2.Multiplication");
+//        Dictionary<int,Calc> A = new Dictionary<int, Calc>
+//        { { 1,Add },{2,Mul} };
+
+//        Console.WriteLine("Enter your choice :");
+//        int choice = int.Parse(Console.ReadLine());
+
+//        if (A.ContainsKey(choice))
+//        {
+//            Calc c= A[choice];
+//            Console.WriteLine("Enter two numbers :");
+//            int a = int.Parse(Console.ReadLine());
+//            int b = int.Parse(Console.ReadLine());
+//            Console.WriteLine("Result :" + c(a, b));
+//        }
+//        else
+//        {
+//            Console.WriteLine("Invalid Choice");
+//        }
+
+//    }
+//}
+
+// Action,Func,Predicate Delegates    
+
+// Action - (used for methods that do not return a value,instead of delegate).
+// No return type and return type is void ie used only for void methods,
+// can have 0 or more parameters of different types.
+// ie action<int(input parameter),string(input parameter),...void(output or return type value)>
+
+// Func -  (used for methods that return a value,instead of delegate).
+// Has return type and can have 0 or more parameters of different types.
+// The last parameter is the return type ie used for methods that return a value.
+// ie func<int(input parameter),string(input parameter),string(output or return type value)>
+
+// Predicate - (used for methods that return a boolean value,instead of delegate).
+// Has return type as bool and can have only one parameter of any type.
+// ie predicate<int(input parameter),bool(output or return type value)>
+
+//class P
+//{
+//    static void Hello(int no,string name)
+//    {
+//        Console.WriteLine("Hello" +" "+ no +" "+name);
+//    }
+//    static string Hello1(string name)
+//    {
+//        return "Hello " + name;
+//    }
+//    static bool Hello2(string name)
+//    {
+//        if (name=="ganesh")
+//        {
+//            return true;
+//        }
+//        else
+//        {
+//            return false;
+//        }
+//    }
+//    public static void Main()
+//    {
+//        Action<int,string> greet = Hello;
+//        greet(1,"ganesh");
+//        Func<string,string> greet1 = Hello1;
+//        Predicate<string> greet2 = Hello2;
+//        Console.WriteLine(greet2("ganesh")); 
+//        Console.WriteLine(greet1("ganesh"));
+//    }
+//}
+
+//class P
+//{
+//    static int add(int x, int y)=>x+y;
+//    static int sub(int x, int y)=>x-y;
+//    static int mul(int x, int y)=>x*y;
+//    static int div(int x, int y)=>x/y;
+//    public static void Main()
+//    {
+//        Dictionary<string,Func<int,int,int>> A = new Dictionary<string, Func<int, int, int>>()
+//        { { "add",add },{ "sub",sub },{ "mul",mul },{ "div",div } };
+//        Console.WriteLine("Enter operation to perform(add,sub,mul,div):");
+//        string op = Console.ReadLine();
+
+//        if (A.ContainsKey(op))
+//        {
+//            Func<int, int, int> operation = A[op];
+//            Console.WriteLine("Enter two numbers:");
+//            int a = int.Parse(Console.ReadLine());
+//            int b = int.Parse(Console.ReadLine());
+//            int result = operation(a, b);
+//            Console.WriteLine($"Result: {result}");
+//        }
+//        else
+//        {
+//            Console.WriteLine("Invalid operation!");
+//        }
+//    }
+//}
+
+
 class P
 {
-    static void namaste()
-    {
-        for (int i = 0; i < 5; i++)
-        {
-            Console.WriteLine("Namaste");
-            Thread.Sleep(2000);
-        }
-    }
+    public delegate void User();
+    public event User onclick;
 
-    static void hello()
+    public void ButtonClick()
     {
-        for (int i = 0; i < 5; i++)
+        if (onclick != null)
         {
-            Console.WriteLine("Hello");
-            Thread.Sleep(1000);
+           Console.WriteLine("Button Clicked!");
         }
-    }
-    public static void Main()
-    {
-        Thread t1 = new Thread(namaste);
-        Thread t2 = new Thread(hello);
-        t1.Name="Namaste Thread";
-        t1.
-        t1.Start();
-        t2.Start();
-        Console.WriteLine("Main Thread Exiting");
+        else
+        {
+          Console.WriteLine("No event subscribers.");
+        }
     }
 }
